@@ -25,11 +25,13 @@ public class FontLoader {
             return dynamicFontPt;
         } catch (Exception e)//异常处理
         {
-            e.printStackTrace();
+//            e.printStackTrace();
             return new Font("宋体", Font.PLAIN, (int) FONT_SIZE);
         } finally {
             try {
-                in.close();
+                if (in != null) {
+                    in.close();
+                }
             } catch (IOException e) {
                 e.printStackTrace();
             }
