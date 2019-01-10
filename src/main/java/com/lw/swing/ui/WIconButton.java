@@ -37,10 +37,16 @@ public class WIconButton extends JButton {
      */
     private JLabel textLabel;
 
+
     /**
-     * 直角&圆角 true为直角，flase为圆角
+     * @Description:
+     * @param: 是否为圆角
+     * @return:
+     * @auther: liwen
+     * @date: 2019/1/10 9:07 AM
      */
-    private boolean corner = true;
+    private boolean round = false;
+
 
     private float alpha = 0f;
 
@@ -60,10 +66,19 @@ public class WIconButton extends JButton {
         this(text, null);
     }
 
+    public WIconButton(String text, boolean round) {
+        this(text, null, round);
+    }
+
     public WIconButton(String text, String icontext) {
+        this(text, icontext, false);
+    }
+
+    public WIconButton(String text, String icontext, boolean round) {
 
         super(text);
         ResourceInjector.get().inject(this);
+        this.round = round;
         initSwing();
         initListener();
 
@@ -172,12 +187,12 @@ public class WIconButton extends JButton {
     }
 
 
-    public boolean isCorner() {
-        return corner;
+    public boolean isRound() {
+        return round;
     }
 
-    public void setCorner(boolean corner) {
-        this.corner = corner;
+    public void setRound(boolean round) {
+        this.round = round;
     }
 
     public boolean isDrawBorder() {
@@ -194,38 +209,38 @@ public class WIconButton extends JButton {
         Graphics2D g2 = (Graphics2D) g.create();
         g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 
-        int w = getWidth();
-        int h = getHeight();
-        int x = 0;
-        int y = 0;
+        int w = getWidth()-2;
+        int h = getHeight()-2;
+        int x = 1;
+        int y = 1;
+        int arc = (getWidth() > getHeight() ? getHeight() : getWidth()) ;
         g2.setColor(getBackground());
         if (isFill()) {//填充
             g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, .5f));
-            if (isCorner()) {
-                g2.fillRect(x, y, w, h);
+            if (isRound()) {
+                g2.fillRoundRect(x, y, w, h, arc, arc);
             } else {
-                g2.fillRoundRect(x, y, w, h, 5, 5);
+                g2.fillRoundRect(x, y, w, h,5,5);
             }
         }
 
         if (alpha > 0.0000001f) {
 
             g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER).derive(alpha));
-            if (!isCorner()) {
-                g2.fillRoundRect(x, y, w, h, 5, 5);
+            if (isRound()) {
+                g2.fillRoundRect(x, y, w, h, arc, arc);
             } else {
-                g2.fillRect(x, y, w, h);
+                g2.fillRoundRect(x, y, w, h,5,5);
             }
         }
 
         if (isDrawBorder()) {//绘制边框
             g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER).derive(1f));
-            if (isCorner()) {
-                g2.drawRect(x, y, w - 1, h - 1);
+            if (isRound()) {
+                g2.drawRoundRect(x, y, w , h , arc, arc);
             } else {
-                g2.drawRoundRect(x, y, w - 1, h - 1, 5, 5);
+                g2.drawRoundRect(x, y, w , h,5,5 );
             }
-
         }
 
         g2.dispose();
