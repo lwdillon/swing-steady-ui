@@ -8,7 +8,7 @@ swing组件
 ![Image text](https://github.com/lwdillon/swing-steady-ui/raw/master/.README/WeChat39625d79adddaf9a5bd624c2e0d219e3.png)
 
 3.按钮
-![Image text](https://github.com/lwdillon/swing-steady-ui/raw/master/.README/WeChatb2dd5b714710c5e91e1c43d2a9245779.png)
+![Image text](https://github.com/lwdillon/swing-steady-ui/raw/master/.README/WeChatd28fb01663687a7d6549f9f9a061bd78.png)
 
 
 4.待续...

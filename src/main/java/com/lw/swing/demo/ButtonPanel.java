@@ -5,6 +5,7 @@ import com.lw.swing.ui.WIconButton;
 import org.apache.commons.lang3.StringUtils;
 
 import javax.swing.*;
+import javax.swing.border.TitledBorder;
 import java.awt.*;
 import java.util.Random;
 
@@ -22,23 +23,24 @@ public class ButtonPanel extends JComponent {
 
     private void initSwing() {
 
-        this.setLayout(new GridLayout(5, 1));
+        this.setLayout(new GridLayout(4, 1));
 
         JPanel panel1 = new JPanel(new GridLayout(2, 1));
         panel1.setOpaque(false);
-        panel1.setBorder(BorderFactory.createTitledBorder("默认按钮"));
+        panel1.setBorder(BorderFactory.createTitledBorder(BorderFactory.createLineBorder(new Color(1f,1f,1f,.2f)),"默认按钮", TitledBorder.LEFT,TitledBorder.TOP,new Font("宋体",Font.PLAIN,16),new Color(1f,1f,1f,.8f)));
         panel1.add(createPanel(true, true, false));
         panel1.add(createPanel(true, true, true));
 
         JPanel panel2 = new JPanel(new GridLayout(2, 1));
         panel2.setOpaque(false);
-        panel2.setBorder(BorderFactory.createTitledBorder("无边框按钮"));
+        panel2.setBorder(BorderFactory.createTitledBorder(BorderFactory.createLineBorder(new Color(1f,1f,1f,.2f)),"无边框按钮", TitledBorder.LEFT,TitledBorder.TOP,new Font("宋体",Font.PLAIN,16),new Color(1f,1f,1f,.8f)));
+
         panel2.add(createPanel(true, false, false));
         panel2.add(createPanel(true, false, true));
 
         JPanel panel3 = new JPanel(new GridLayout(2, 1));
         panel3.setOpaque(false);
-        panel3.setBorder(BorderFactory.createTitledBorder("无填充按钮"));
+        panel3.setBorder(BorderFactory.createTitledBorder(BorderFactory.createLineBorder(new Color(1f,1f,1f,.2f)),"无填充按钮", TitledBorder.LEFT,TitledBorder.TOP,new Font("宋体",Font.PLAIN,16),new Color(1f,1f,1f,.8f)));
         panel3.add(createPanel(false, true, false));
         panel3.add(createPanel(false, true, true));
 
@@ -61,9 +63,10 @@ public class ButtonPanel extends JComponent {
         wButtonGroup3.addButton("删除", "fa-minus");
         wButtonGroup3.addButton("保存", "fa-save");
 
-        JPanel panel4 = new JPanel(new GridLayout(1, 3));
+        JPanel panel4 = new JPanel(new GridLayout(1, 3,10,0));
         panel4.setOpaque(false);
-        panel4.setBorder(BorderFactory.createTitledBorder("按钮组"));
+        panel4.setBorder(BorderFactory.createTitledBorder(BorderFactory.createLineBorder(new Color(1f,1f,1f,.2f)),"按钮组", TitledBorder.LEFT,TitledBorder.TOP,new Font("宋体",Font.PLAIN,16),new Color(1f,1f,1f,.8f)));
+
         panel4.add(wButtonGroup1);
         panel4.add(wButtonGroup3);
         panel4.add(wButtonGroup2);
