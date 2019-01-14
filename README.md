@@ -10,5 +10,7 @@ swing组件
 3.按钮
 ![Image text](https://github.com/lwdillon/swing-steady-ui/raw/master/.README/WeChatd28fb01663687a7d6549f9f9a061bd78.png)
 
+4.消息提示框
+![Image text](https://github.com/lwdillon/swing-steady-ui/raw/master/.README/WeChat502.png)
 
-4.待续...
+5.待续...
