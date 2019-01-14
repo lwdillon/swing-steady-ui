@@ -1,6 +1,7 @@
 package com.lw.swing.ui;
 
 import com.lw.swing.demo.ButtonPanel;
+import com.lw.swing.demo.NotificationPanel;
 import com.lw.swing.ui.panel.WBlurEffectPanel;
 import com.lw.swing.ui.slider.SideBar;
 import com.lw.swing.ui.slider.SidebarSection;
@@ -61,6 +62,8 @@ public class NavigationPanel extends WBlurEffectPanel {
                 Component c = new JLabel("cc");
                 if (text.equals("按钮")) {
                     c = new ButtonPanel();
+                }else if(text.equals("弹出消息")){
+                    c = new NotificationPanel();
                 }
                 if (TransitionManager.getTabbedPane().indexOfTab(text) == -1) {
                     TransitionManager.getTabbedPane().addTab(icontfont, text, c);

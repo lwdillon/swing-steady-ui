@@ -70,7 +70,10 @@ public class TransitionManager {
     }
 
     static void killOverlay() {
-        mainFrame.killOverlay();
+        if (mainFrame != null) {
+            mainFrame.killOverlay();
+
+        }
     }
 
     static void showLoginOverlay(boolean visible) {
@@ -104,6 +107,14 @@ public class TransitionManager {
 
     public static WTabbedPane getTabbedPane() {
         return tabbedPane;
+    }
+
+    public static void showMessage(String message, int type) {
+        mainFrame.showMessage(message, type);
+    }
+
+    public static void showNotify(String message, int type, Object constraints) {
+        mainFrame.showNotify(message, type, constraints);
     }
 
     static void installRepaintManager() {

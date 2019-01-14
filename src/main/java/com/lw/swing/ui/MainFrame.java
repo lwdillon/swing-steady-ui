@@ -13,6 +13,8 @@ public class MainFrame extends WFrame {
 
     private Component originalOverlay;
     private LoginOverlay loginOverlay;
+    private WMessagerPanel messagerPanel;
+    private WNotifyPanel notifyPanel;
     private ContentPanel panel;
 
     public MainFrame(final ContentPanel transPanel) {
@@ -52,5 +54,23 @@ public class MainFrame extends WFrame {
         if (visible) {
             getGlassPane().setVisible(true);
         }
+    }
+
+    void showMessage(String message,int type) {
+        if (messagerPanel == null) {
+            messagerPanel = new WMessagerPanel();
+        }
+        setGlassPane(messagerPanel);
+        getGlassPane().setVisible(true);
+        messagerPanel.showMessage(message,type);
+    }
+
+    void showNotify(String message, int type,Object constraints) {
+        if (notifyPanel == null) {
+            notifyPanel = new WNotifyPanel();
+        }
+        setGlassPane(notifyPanel);
+        getGlassPane().setVisible(true);
+        notifyPanel.showNotify(message, type,constraints);
     }
 }
