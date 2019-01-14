@@ -1,6 +1,8 @@
 # swing-steady-ui
 swing组件
 
+建了一个qq群，方便讨论，qq群:114697782
+
 1.登录框
 ![Image text](https://github.com/lwdillon/swing-steady-ui/raw/master/.README/WeChate323d760e57358b3298f95e2e0933280.png)
 
