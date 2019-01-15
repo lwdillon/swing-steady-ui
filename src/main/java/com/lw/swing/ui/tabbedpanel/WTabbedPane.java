@@ -20,6 +20,11 @@ public class WTabbedPane extends JTabbedPane {
     private boolean fillBackground = false;
 
     public WTabbedPane() {
+        this(TOP);
+    }
+
+    public WTabbedPane(int tabPlacement) {
+        super(tabPlacement);
         init();
     }
 

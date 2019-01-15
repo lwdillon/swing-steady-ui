@@ -3,7 +3,6 @@ package com.lw.swing.demo;
 import com.lw.swing.ui.TransitionManager;
 import com.lw.swing.ui.slider.SideBar;
 import com.lw.swing.ui.slider.SidebarSection;
-import sun.tools.jconsole.Tab;
 
 import javax.swing.*;
 import java.awt.*;

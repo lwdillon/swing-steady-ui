@@ -3,6 +3,7 @@ package com.lw.swing.ui;
 import com.lw.swing.demo.ButtonPanel;
 import com.lw.swing.demo.NavigationDome;
 import com.lw.swing.demo.NotificationPanel;
+import com.lw.swing.demo.TabbedDemo;
 import com.lw.swing.ui.panel.WBlurEffectPanel;
 import com.lw.swing.ui.slider.SideBar;
 import com.lw.swing.ui.slider.SidebarSection;
@@ -67,6 +68,8 @@ public class NavigationPanel extends WBlurEffectPanel {
                     c = new NotificationPanel();
                 }else if(text.equals("导航栏")){
                     c = new NavigationDome();
+                }else if(text.equals("选项卡")){
+                    c = new TabbedDemo();
                 }
                 if (TransitionManager.getTabbedPane().indexOfTab(text) == -1) {
                     TransitionManager.getTabbedPane().addTab(icontfont, text, c);

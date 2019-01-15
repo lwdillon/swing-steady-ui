@@ -67,6 +67,7 @@ public class WTabComponent extends JPanel {
         if (StringUtils.isNotBlank(iconFont)) {
             this.add(lbIcon, BorderLayout.WEST);
         }
+        btnClose.setVisible(isShowCloseBut);
         this.add(btnClose, BorderLayout.EAST);
         this.add(this.lbTitle, BorderLayout.CENTER);
         this.setOpaque(false);

@@ -18,4 +18,7 @@ swing组件
 6.导航栏
 ![Image text](https://github.com/lwdillon/swing-steady-ui/raw/master/.README/WeChata85.png)
 
-7.待续...
+7.选项卡
+![Image text](https://github.com/lwdillon/swing-steady-ui/raw/master/.README/WeChat729.png)
+
+8.待续...
